@@ -1,6 +1,6 @@
 ---
 title: "Gov 50 Final Project"
-author: "Your Name Here"
+author: "Andrew Rosenblatt"
 description: "My final project"
 output:
   distill::distill_article:
@@ -11,4 +11,4 @@ output:
 
 ## Project thoughts
 
-I am interested in exploring data related to...
+I am interested in exploring data related to sports statistics. I am most interested in basketball statistics and I am not sure which specific variables I would want to examine yet. If I can find the data, I would be more interested in looking towards college basketball statistics because I am in college but also because the NBA is far more refined in its implementation of analytics whereas college basketball still has a ways to go in terms of using basketball analytics to best gain an advantage.
