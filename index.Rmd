@@ -30,13 +30,15 @@ tempo <- cbb|>
   group_by(W)|>
   summarize(mean = mean(ADJ_T))
 
-tempo|>
+avg_tempo_graph <- tempo|>
   ggplot(aes(x = W,
              y = mean))+
   geom_line()+
   labs(x = "Wins",
        y = "Average Tempo",
        title = "Average Pace of Play for a Certain Amount of Wins")
+
+avg_tempo_graph
 ```
 
 
