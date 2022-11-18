@@ -1580,13 +1580,13 @@ Residual standard error: 0.1798 on 2453 degrees of freedom
 Multiple R-squared:  5.798e-05, Adjusted R-squared:  -0.0003497 
 F-statistic: 0.1422 on 1 and 2453 DF,  p-value: 0.7061</code></pre>
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'><a href='https://rdrr.io/r/graphics/plot.default.html'>plot</a></span><span class='op'>(</span><span class='va'>cbb</span><span class='op'>$</span><span class='va'>ADJ_T</span>, <span class='va'>cbb</span><span class='op'>$</span><span class='va'>winpct</span><span class='op'>)</span></span>
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'><a href='https://rdrr.io/r/graphics/plot.default.html'>plot</a></span><span class='op'>(</span><span class='va'>cbb</span><span class='op'>$</span><span class='va'>ADJ_T</span>, <span class='va'>cbb</span><span class='op'>$</span><span class='va'>winpct</span>, xlab <span class='op'>=</span> <span class='st'>"Pace of Play"</span>, ylab <span class='op'>=</span> <span class='st'>"Win Percentage"</span><span class='op'>)</span></span>
 <span><span class='fu'><a href='https://rdrr.io/r/graphics/abline.html'>abline</a></span><span class='op'>(</span><span class='va'>hypolm</span>, col <span class='op'>=</span> <span class='st'>"red"</span><span class='op'>)</span></span></code></pre>
 </div>
 <p><img src="index_files/figure-html5/unnamed-chunk-3-1.png" width="624" /></p>
 </div>
-<p>##Hypothesis Anaylsis:
-My hypothesis that a faster pace of play, or larger adjusted tempo, would lead to more wins, or a higher winning percentage was proven true as the correlation between win percentage and adjusted tempo was positive. However, it had very little impact and is not strongly correlated at all, meaning that it is not statistically significant. I will continue to further explore the impact of pace of play in college basketball and see if has any correlation with other variables in the data set.</p>
+<h2 id="hypothesis-anaylsis">Hypothesis Anaylsis:</h2>
+<p>My hypothesis that a faster pace of play, or larger adjusted tempo, would lead to more wins, or a higher winning percentage was proven true as the correlation between win percentage and adjusted tempo was positive. However, it had very little impact and is not strongly correlated at all, meaning that it is not statistically significant. I will continue to further explore the impact of pace of play in college basketball and see if has any correlation with other variables in the data set.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->

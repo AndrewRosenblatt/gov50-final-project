@@ -48,11 +48,12 @@ hypolm <- lm(cbb$winpct ~ ADJ_T, data = cbb)
 hypolm
 summary(hypolm)
 
-plot(cbb$ADJ_T, cbb$winpct)
+plot(cbb$ADJ_T, cbb$winpct, xlab = "Pace of Play", ylab = "Win Percentage")
 abline(hypolm, col = "red")
 
 ```
 
-##Hypothesis Anaylsis:
+## Hypothesis Anaylsis:
+
 My hypothesis that a faster pace of play, or larger adjusted tempo, would lead to more wins, or a higher winning percentage was proven true as the correlation between win percentage and adjusted tempo was positive. However, it had very little impact and is not strongly correlated at all, meaning that it is not statistically significant. I will continue to further explore the impact of pace of play in college basketball and see if has any correlation with other variables in the data set.
 
