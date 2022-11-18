@@ -115,7 +115,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["cbb.csv","index_files/anchor-4.2.2/anchor.min.js","index_files/bowser-1.9.3/bowser.min.js","index_files/distill-2.2.21/template.v2.js","index_files/figure-html5/unnamed-chunk-2-1.png","index_files/header-attrs-2.17/header-attrs.js","index_files/jquery-3.6.0/jquery-3.6.0.js","index_files/jquery-3.6.0/jquery-3.6.0.min.js","index_files/jquery-3.6.0/jquery-3.6.0.min.map","index_files/popper-2.6.0/popper.min.js","index_files/tippy-6.2.7/tippy-bundle.umd.min.js","index_files/tippy-6.2.7/tippy-light-border.css","index_files/tippy-6.2.7/tippy.css","index_files/tippy-6.2.7/tippy.umd.min.js","index_files/webcomponents-2.0.0/webcomponents.js"]}
+  {"type":"character","attributes":{},"value":["cbb.csv","index_files/anchor-4.2.2/anchor.min.js","index_files/bowser-1.9.3/bowser.min.js","index_files/distill-2.2.21/template.v2.js","index_files/figure-html5/unnamed-chunk-2-1.png","index_files/figure-html5/unnamed-chunk-3-1.png","index_files/header-attrs-2.17/header-attrs.js","index_files/jquery-3.6.0/jquery-3.6.0.js","index_files/jquery-3.6.0/jquery-3.6.0.min.js","index_files/jquery-3.6.0/jquery-3.6.0.min.map","index_files/popper-2.6.0/popper.min.js","index_files/tippy-6.2.7/tippy-bundle.umd.min.js","index_files/tippy-6.2.7/tippy-light-border.css","index_files/tippy-6.2.7/tippy.css","index_files/tippy-6.2.7/tippy.umd.min.js","index_files/webcomponents-2.0.0/webcomponents.js"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
@@ -1545,7 +1545,49 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </div>
 <p><img src="index_files/figure-html5/unnamed-chunk-2-1.png" width="624" /></p>
 </div>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>cbb</span><span class='op'>$</span><span class='va'>winpct</span> <span class='op'>&lt;-</span> <span class='va'>cbb</span><span class='op'>$</span><span class='va'>W</span> <span class='op'>/</span> <span class='va'>cbb</span><span class='op'>$</span><span class='va'>G</span></span>
+<span><span class='va'>hypolm</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/lm.html'>lm</a></span><span class='op'>(</span><span class='va'>cbb</span><span class='op'>$</span><span class='va'>winpct</span> <span class='op'>~</span> <span class='va'>ADJ_T</span>, data <span class='op'>=</span> <span class='va'>cbb</span><span class='op'>)</span></span>
+<span><span class='va'>hypolm</span></span></code></pre>
+</div>
+<pre><code>
+Call:
+lm(formula = cbb$winpct ~ ADJ_T, data = cbb)
+
+Coefficients:
+(Intercept)        ADJ_T  
+  0.4798881    0.0004175  </code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'><a href='https://rdrr.io/r/base/summary.html'>summary</a></span><span class='op'>(</span><span class='va'>hypolm</span><span class='op'>)</span></span></code></pre>
+</div>
+<pre><code>
+Call:
+lm(formula = cbb$winpct ~ ADJ_T, data = cbb)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.50724 -0.12899  0.00797  0.12858  0.46796 
+
+Coefficients:
+             Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept) 0.4798881  0.0751633   6.385 2.05e-10 ***
+ADJ_T       0.0004175  0.0011071   0.377    0.706    
+---
+Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+
+Residual standard error: 0.1798 on 2453 degrees of freedom
+Multiple R-squared:  5.798e-05, Adjusted R-squared:  -0.0003497 
+F-statistic: 0.1422 on 1 and 2453 DF,  p-value: 0.7061</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'><a href='https://rdrr.io/r/graphics/plot.default.html'>plot</a></span><span class='op'>(</span><span class='va'>cbb</span><span class='op'>$</span><span class='va'>ADJ_T</span>, <span class='va'>cbb</span><span class='op'>$</span><span class='va'>winpct</span><span class='op'>)</span></span>
+<span><span class='fu'><a href='https://rdrr.io/r/graphics/abline.html'>abline</a></span><span class='op'>(</span><span class='va'>hypolm</span>, col <span class='op'>=</span> <span class='st'>"red"</span><span class='op'>)</span></span></code></pre>
+</div>
+<p><img src="index_files/figure-html5/unnamed-chunk-3-1.png" width="624" /></p>
+</div>
+<p>#Hypothesis Anaylsis:
+My hypothesis that a faster pace of play, or larger adjusted tempo, would lead to more wins, or a higher winning percentage was proven true as the correlation between win percentage and adjusted tempo was positive. However, it had very little impact and is not strongly correlated at all, meaning that it is not statistically significant. I will continue to further explore the impact of pace of play in college basketball and see if has any correlation with other variables in the data set.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
