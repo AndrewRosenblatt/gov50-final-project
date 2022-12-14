@@ -9,16 +9,62 @@ output:
 
 
 
-## Project thoughts
+## Introduction
 
-I am interested in exploring data related to sports statistics. I am most interested in basketball statistics and I am not sure which specific variables I would want to examine yet. If I can find the data, I would be more interested in looking towards college basketball statistics because, for one, I am in college, but also because the NBA is far more refined in its implementation of analytics whereas college basketball still has a ways to go in terms of using basketball analytics to best gain an advantage.
+I was interested in exploring data related to sports statistics, more specifically basketball statistics. I was more interested in looking towards college basketball statistics because, for one, I am in college, but also because the NBA is far more refined in its implementation of analytics whereas college basketball still has a ways to go in terms of using basketball analytics to best gain an advantage. My research question is how does a college basketball team's pace of play affect their chances of winning? In the NBA, pace of play, more specifically a faster pace of play, has become a key point of emphasis for many teams in their quest to win more games and to reach their ultimate goal of winning an NBA championship. Despite it being the same sport just at a different level, the main talking points for a winning formula in college basketball, at least in the media, are still about winning the turnover battle and out rebounding the opponent. My hypothesis is that in college basketball, the quicker a team's pace of play is, the greater their chance of winning games is. The explanatory variable in this study will be adjusted tempo, which measures a team's number of possessions per 40 minutes compared to an average team's number of possessions in the same amount of time. The outcome variable in this study is a team's winning percentage. If my hypothesis is correct, then teams with a higher adjusted tempo would have a higher win percentage than teams with a lower adjusted tempo on average. If this is not the case and adjusted tempo has no impact or a negative impact on the a team's win percentage, then that would disprove my hypothesis. 
 
-## Proposal Research Question
+## About the Data
+The data used in this study is cross sectional and contains the more advanced metrics of each division one college basketball team from 2013 to 2019. The variables in this data set are as follows:
 
-My research question is how does a college basketball team's pace of play affect their chances of winning? In the NBA, pace of play, more specifically a faster pace of play, has become a key point of emphasis for many teams in their quest to win more games and to reach their ultimate goal of winning an NBA championship. Despite it being the same sport just at a different level, the main talking points for a winning formula in college basketball, at least in the media, are still about winning the turnover battle and out rebounding the opponent. My hypothesis is that in college basketball, the quicker a team's pace of play is, the greater their chance of winning games is. The explanatory variable in this study will be adjusted tempo, which measures a team's number of possessions per 40 minutes compared to an average team's number of possessions in the same amount of time. The outcome variable in this study is the number of games won. If my hypothesis is correct, then teams with a higher adjusted tempo would have more wins than teams with a lower adjusted tempo on average. If this is not the case and adjusted tempo has no impact or a negative impact on the number of games a team wins, then that would disprove my hypothesis. 
+TEAM: The Division I college basketball school
 
+CONF: The Athletic Conference in which the school participates in
 
+G: Number of games played
 
+W: Number of games won
+
+ADJOE: Adjusted Offensive Efficiency (An estimate of the offensive efficiency (points scored per 100 possessions) a team would have against the average Division I defense)
+
+ADJDE: Adjusted Defensive Efficiency (An estimate of the defensive efficiency (points allowed per 100 possessions) a team would have against the average Division I offense)
+
+BARTHAG: Power Rating (Chance of beating an average Division I team)
+
+EFG_O: Effective Field Goal Percentage Shot
+
+EFG_D: Effective Field Goal Percentage Allowed
+
+TOR: Turnover Percentage Allowed (Turnover Rate)
+
+TORD: Turnover Percentage Committed (Steal Rate)
+
+ORB: Offensive Rebound Rate
+
+DRB: Offensive Rebound Rate Allowed
+
+FTR : Free Throw Rate (How often the given team shoots Free Throws)
+
+FTRD: Free Throw Rate Allowed
+
+2P_O: Two-Point Shooting Percentage
+
+2P_D: Two-Point Shooting Percentage Allowed
+
+3P_O: Three-Point Shooting Percentage
+
+3P_D: Three-Point Shooting Percentage Allowed
+
+ADJ_T: Adjusted Tempo (An estimate of the tempo (possessions per 40 minutes) a team would have against the team that wants to play at an average Division I tempo)
+
+WAB: Wins Above Bubble (The bubble refers to the cut off between making the NCAA March Madness Tournament and not making it)
+
+POSTSEASON: Round where the given team was eliminated or where their season ended
+
+SEED: Seed in the NCAA March Madness Tournament
+
+YEAR: Season
+
+In this study, the independent variable is adjusted tempo (ADJ_T) and the dependent variable is win percentage which is wins divided by games (W/G) and both of these variables are statistics gathered for each team in a given year. The graph below shows the distribution of adjusted tempo:
 
 ```{r}
 library(tidyverse)
@@ -26,34 +72,107 @@ cbb <- read_csv("cbb.csv")
 ```
 
 ```{r}
-tempo <- cbb|>
-  group_by(W)|>
-  summarize(mean = mean(ADJ_T))
+dist <- cbb|>
+  ggplot(aes(x = ADJ_T))+
+  geom_histogram(color = "skyblue")+
+  labs(x = "Adjusted Tempo",
+       y = "Frequency",
+       title = "Adjusted Tempo Distribution")
+dist
+```
 
-avg_tempo_graph <- tempo|>
-  ggplot(aes(x = W,
+
+## Results
+
+```{r}
+cbb$winpct <- cbb$W / cbb$G
+
+ADJ_win_graph <- cbb|>
+  ggplot(aes(x = ADJ_T,
+             y = winpct))+
+  geom_point(col = "skyblue")+
+  geom_smooth(col = "indianred1")+
+  labs(x = "Adjusted Tempo",
+       y = "Win Percentage",
+       title = "Effect of Adjusted Tempo on Win Percentage")
+
+ADJ_win_graph
+
+hypolm <- lm(winpct ~ ADJ_T, data = cbb)
+hypolm
+summary(hypolm)
+modelsummary::modelsummary(hypolm,
+                           statistic = c("s.e. = {std.error}",
+                                         "p = {p.value}"),
+                           gof_map = c("nobs", "r.squared", "adj.r.squared"))
+
+```
+
+
+## Regression Analysis:
+
+The coefficient of the regression is 0.0004175 which means that for every 1 unit increase in the explanatory variable, in this case an increase of 1 in adjusted tempo, then the outcome variable, in this case win percentage, increases by 0.0004174 or about 0.04%. This coefficient is not statistically significant as it is very small and suggests that there is little correlation between adjusted tempo and winning percentage.
+
+## Hypothesis Analysis:
+
+My hypothesis that a faster pace of play, or larger adjusted tempo, would lead to more wins, or a higher winning percentage was proven true in the sense that the correlation between win percentage and adjusted tempo was positive. However, it had very little impact and is not strongly correlated at all, meaning that it is not statistically significant, and so in a sense my hypothesis that pace of play was a key indicator of team success was proven false. 
+
+## Multiple Regression:
+
+```{r}
+multi_hypolm <- lm(winpct ~ ADJ_T + TORD + ORB, data = cbb)
+multi_hypolm
+summary(multi_hypolm)
+modelsummary::modelsummary(multi_hypolm,
+                           statistic = c("s.e. = {std.error}",
+                                         "p = {p.value}"),
+                           gof_map = c("nobs", "r.squared", "adj.r.squared"))
+```
+
+## Multiple Regression Analysis:
+
+In the multiple regression, the adjusted tempo coefficient is 0.0025 which is much greater than it was in the single regression and is somewhat statistically significant. The other two variables in this regression, turnover percentage committed (steal rate) and offensive rebound rate, have coefficients of 0.0096 and 0.011 respectively, both being statistically significant. The reason I chose these two variables is because, as I explained in the introduction, analysts often sight these statistics as the most important for winning college basketball games and, thus, I wanted to test them compared to adjusted tempo.
+
+## Other Findings:
+
+```{r}
+tempo_by_year <- cbb|>
+  group_by(YEAR)|>
+  summarize(mean = mean(ADJ_T, na.rm = TRUE))
+
+avg_tempo_by_year_graph <- tempo_by_year|>
+  ggplot(aes(x = YEAR,
              y = mean))+
   geom_line()+
-  labs(x = "Wins",
+  labs(x = "Year",
        y = "Average Tempo",
-       title = "Average Pace of Play for a Certain Amount of Wins")
+       title = "Average Pace of Play by Year")
 
-avg_tempo_graph
+avg_tempo_by_year_graph
 ```
 
 
 ```{r}
-cbb$winpct <- cbb$W / cbb$G
-hypolm <- lm(cbb$winpct ~ ADJ_T, data = cbb)
-hypolm
-summary(hypolm)
+cbb_2015 <- cbb|>
+  filter(YEAR == 2015)
 
-plot(cbb$ADJ_T, cbb$winpct, xlab = "Pace of Play", ylab = "Win Percentage")
-abline(hypolm, col = "red")
+cbb_2015$winpct <- cbb_2015$W / cbb_2015$G
 
+hypolm_15 <- lm(cbb_2015$winpct ~ cbb_2015$ADJ_T)
+
+summary(hypolm_15)
+modelsummary::modelsummary(hypolm_15,
+                           statistic = c("s.e. = {std.error}",
+                                         "p = {p.value}"),
+                           gof_map = c("nobs", "r.squared", "adj.r.squared"))
 ```
 
-## Hypothesis Anaylsis:
+## Other Findings Analysis:
 
-My hypothesis that a faster pace of play, or larger adjusted tempo, would lead to more wins, or a higher winning percentage was proven true as the correlation between win percentage and adjusted tempo was positive. However, it had very little impact and is not strongly correlated at all, meaning that it is not statistically significant. I will continue to further explore the impact of pace of play in college basketball and see if has any correlation with other variables in the data set.
+I decided to examine the average adjusted tempo by year and found there was a significant increase in average adjusted tempo from the 2015 season to the 2016 season. I wondered if that could possibly be because there was a much stronger correlation between adjusted tempo and win percentage during the 2015 season, and so I ran a regression on those two variables for that season but there was not a strong correlation, in fact, there was a slightly negative correlation instead. I then tried to find an alternative explanation as to why there was such an increase between these seasons by looking at the top finishing teams from the 2015 season, but that did not seem to explain it either because the champion that year was only slightly above the average, the second place finisher was far below the average in adjusted tempo, and the team with the highest winning percentage was about average in that category. My only current reasoning as to why this increase occurred was because the NBA champion Golden State Warriors from 2015 played at a very fast pace and thus college teams attempted to replicate this as well.
+
+## Conclusion
+
+The results of this study have shown my hypothesis that playing at a faster pace increases a team's chance of winning to be false for the most part, as even though there is a slight positive correlation between the two variables, it is not statistically significant. Instead, a better indicator of team success is the rate at which teams force turnovers and rebound the basketball. One aspect of this study I would like to improve upon in the future is looking at these data points by conference because there is a wide range of talent at the division one level, and so looking at division one basketball in its entirety might not be the most effective way at evaluating the overall trends of the top teams, which I am most interested in. I am also interested in further examining why there was the large increase in adjusted tempo from the 2015 to the 2016 season if there is not a strong correlation between win percentage and pace of play. 
+
 

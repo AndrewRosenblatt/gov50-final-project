@@ -115,7 +115,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["cbb.csv","index_files/anchor-4.2.2/anchor.min.js","index_files/bowser-1.9.3/bowser.min.js","index_files/distill-2.2.21/template.v2.js","index_files/figure-html5/unnamed-chunk-2-1.png","index_files/figure-html5/unnamed-chunk-3-1.png","index_files/header-attrs-2.17/header-attrs.js","index_files/jquery-3.6.0/jquery-3.6.0.js","index_files/jquery-3.6.0/jquery-3.6.0.min.js","index_files/jquery-3.6.0/jquery-3.6.0.min.map","index_files/popper-2.6.0/popper.min.js","index_files/tippy-6.2.7/tippy-bundle.umd.min.js","index_files/tippy-6.2.7/tippy-light-border.css","index_files/tippy-6.2.7/tippy.css","index_files/tippy-6.2.7/tippy.umd.min.js","index_files/webcomponents-2.0.0/webcomponents.js"]}
+  {"type":"character","attributes":{},"value":["cbb.csv","index_files/anchor-4.2.2/anchor.min.js","index_files/bowser-1.9.3/bowser.min.js","index_files/distill-2.2.21/template.v2.js","index_files/figure-html5/unnamed-chunk-2-1.png","index_files/figure-html5/unnamed-chunk-3-1.png","index_files/figure-html5/unnamed-chunk-5-1.png","index_files/header-attrs-2.17/header-attrs.js","index_files/jquery-3.6.0/jquery-3.6.0.js","index_files/jquery-3.6.0/jquery-3.6.0.min.js","index_files/jquery-3.6.0/jquery-3.6.0.min.map","index_files/popper-2.6.0/popper.min.js","index_files/tippy-6.2.7/tippy-bundle.umd.min.js","index_files/tippy-6.2.7/tippy-light-border.css","index_files/tippy-6.2.7/tippy.css","index_files/tippy-6.2.7/tippy.umd.min.js","index_files/webcomponents-2.0.0/webcomponents.js"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
@@ -1473,6 +1473,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   <!--/radix_placeholder_distill-->
   <script src="index_files/header-attrs-2.17/header-attrs.js"></script>
+  <script src="index_files/kePrint-0.0.1/kePrint.js"></script>
+  <link href="index_files/lightable-0.0.1/lightable.css" rel="stylesheet" />
   <script src="index_files/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <script src="index_files/popper-2.6.0/popper.min.js"></script>
   <link href="index_files/tippy-6.2.7/tippy.css" rel="stylesheet" />
@@ -1517,10 +1519,35 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </div>
 
 <div class="d-article">
-<h2 id="project-thoughts">Project thoughts</h2>
-<p>I am interested in exploring data related to sports statistics. I am most interested in basketball statistics and I am not sure which specific variables I would want to examine yet. If I can find the data, I would be more interested in looking towards college basketball statistics because, for one, I am in college, but also because the NBA is far more refined in its implementation of analytics whereas college basketball still has a ways to go in terms of using basketball analytics to best gain an advantage.</p>
-<h2 id="proposal-research-question">Proposal Research Question</h2>
-<p>My research question is how does a college basketball team’s pace of play affect their chances of winning? In the NBA, pace of play, more specifically a faster pace of play, has become a key point of emphasis for many teams in their quest to win more games and to reach their ultimate goal of winning an NBA championship. Despite it being the same sport just at a different level, the main talking points for a winning formula in college basketball, at least in the media, are still about winning the turnover battle and out rebounding the opponent. My hypothesis is that in college basketball, the quicker a team’s pace of play is, the greater their chance of winning games is. The explanatory variable in this study will be adjusted tempo, which measures a team’s number of possessions per 40 minutes compared to an average team’s number of possessions in the same amount of time. The outcome variable in this study is the number of games won. If my hypothesis is correct, then teams with a higher adjusted tempo would have more wins than teams with a lower adjusted tempo on average. If this is not the case and adjusted tempo has no impact or a negative impact on the number of games a team wins, then that would disprove my hypothesis.</p>
+<h2 id="introduction">Introduction</h2>
+<p>I was interested in exploring data related to sports statistics, more specifically basketball statistics. I was more interested in looking towards college basketball statistics because, for one, I am in college, but also because the NBA is far more refined in its implementation of analytics whereas college basketball still has a ways to go in terms of using basketball analytics to best gain an advantage. My research question is how does a college basketball team’s pace of play affect their chances of winning? In the NBA, pace of play, more specifically a faster pace of play, has become a key point of emphasis for many teams in their quest to win more games and to reach their ultimate goal of winning an NBA championship. Despite it being the same sport just at a different level, the main talking points for a winning formula in college basketball, at least in the media, are still about winning the turnover battle and out rebounding the opponent. My hypothesis is that in college basketball, the quicker a team’s pace of play is, the greater their chance of winning games is. The explanatory variable in this study will be adjusted tempo, which measures a team’s number of possessions per 40 minutes compared to an average team’s number of possessions in the same amount of time. The outcome variable in this study is a team’s winning percentage. If my hypothesis is correct, then teams with a higher adjusted tempo would have a higher win percentage than teams with a lower adjusted tempo on average. If this is not the case and adjusted tempo has no impact or a negative impact on the a team’s win percentage, then that would disprove my hypothesis.</p>
+<h2 id="about-the-data">About the Data</h2>
+<p>The data used in this study is cross sectional and contains the more advanced metrics of each division one college basketball team from 2013 to 2019. The variables in this data set are as follows:</p>
+<p>TEAM: The Division I college basketball school</p>
+<p>CONF: The Athletic Conference in which the school participates in</p>
+<p>G: Number of games played</p>
+<p>W: Number of games won</p>
+<p>ADJOE: Adjusted Offensive Efficiency (An estimate of the offensive efficiency (points scored per 100 possessions) a team would have against the average Division I defense)</p>
+<p>ADJDE: Adjusted Defensive Efficiency (An estimate of the defensive efficiency (points allowed per 100 possessions) a team would have against the average Division I offense)</p>
+<p>BARTHAG: Power Rating (Chance of beating an average Division I team)</p>
+<p>EFG_O: Effective Field Goal Percentage Shot</p>
+<p>EFG_D: Effective Field Goal Percentage Allowed</p>
+<p>TOR: Turnover Percentage Allowed (Turnover Rate)</p>
+<p>TORD: Turnover Percentage Committed (Steal Rate)</p>
+<p>ORB: Offensive Rebound Rate</p>
+<p>DRB: Offensive Rebound Rate Allowed</p>
+<p>FTR : Free Throw Rate (How often the given team shoots Free Throws)</p>
+<p>FTRD: Free Throw Rate Allowed</p>
+<p>2P_O: Two-Point Shooting Percentage</p>
+<p>2P_D: Two-Point Shooting Percentage Allowed</p>
+<p>3P_O: Three-Point Shooting Percentage</p>
+<p>3P_D: Three-Point Shooting Percentage Allowed</p>
+<p>ADJ_T: Adjusted Tempo (An estimate of the tempo (possessions per 40 minutes) a team would have against the team that wants to play at an average Division I tempo)</p>
+<p>WAB: Wins Above Bubble (The bubble refers to the cut off between making the NCAA March Madness Tournament and not making it)</p>
+<p>POSTSEASON: Round where the given team was eliminated or where their season ended</p>
+<p>SEED: Seed in the NCAA March Madness Tournament</p>
+<p>YEAR: Season</p>
+<p>In this study, the independent variable is adjusted tempo (ADJ_T) and the dependent variable is win percentage which is wins divided by games (W/G) and both of these variables are statistics gathered for each team in a given year. The graph below shows the distribution of adjusted tempo:</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://tidyverse.tidyverse.org'>tidyverse</a></span><span class='op'>)</span></span>
@@ -1529,31 +1556,40 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </div>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>tempo</span> <span class='op'>&lt;-</span> <span class='va'>cbb</span><span class='op'>|&gt;</span></span>
-<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/group_by.html'>group_by</a></span><span class='op'>(</span><span class='va'>W</span><span class='op'>)</span><span class='op'>|&gt;</span></span>
-<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/summarise.html'>summarize</a></span><span class='op'>(</span>mean <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>ADJ_T</span><span class='op'>)</span><span class='op'>)</span></span>
-<span></span>
-<span><span class='va'>avg_tempo_graph</span> <span class='op'>&lt;-</span> <span class='va'>tempo</span><span class='op'>|&gt;</span></span>
-<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>W</span>,</span>
-<span>             y <span class='op'>=</span> <span class='va'>mean</span><span class='op'>)</span><span class='op'>)</span><span class='op'>+</span></span>
-<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_path.html'>geom_line</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>+</span></span>
-<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='st'>"Wins"</span>,</span>
-<span>       y <span class='op'>=</span> <span class='st'>"Average Tempo"</span>,</span>
-<span>       title <span class='op'>=</span> <span class='st'>"Average Pace of Play for a Certain Amount of Wins"</span><span class='op'>)</span></span>
-<span></span>
-<span><span class='va'>avg_tempo_graph</span></span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>dist</span> <span class='op'>&lt;-</span> <span class='va'>cbb</span><span class='op'>|&gt;</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>ADJ_T</span><span class='op'>)</span><span class='op'>)</span><span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_histogram.html'>geom_histogram</a></span><span class='op'>(</span>color <span class='op'>=</span> <span class='st'>"skyblue"</span><span class='op'>)</span><span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='st'>"Adjusted Tempo"</span>,</span>
+<span>       y <span class='op'>=</span> <span class='st'>"Frequency"</span>,</span>
+<span>       title <span class='op'>=</span> <span class='st'>"Adjusted Tempo Distribution"</span><span class='op'>)</span></span>
+<span><span class='va'>dist</span></span></code></pre>
 </div>
 <p><img src="index_files/figure-html5/unnamed-chunk-2-1.png" width="624" /></p>
 </div>
+<h2 id="results">Results</h2>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>cbb</span><span class='op'>$</span><span class='va'>winpct</span> <span class='op'>&lt;-</span> <span class='va'>cbb</span><span class='op'>$</span><span class='va'>W</span> <span class='op'>/</span> <span class='va'>cbb</span><span class='op'>$</span><span class='va'>G</span></span>
-<span><span class='va'>hypolm</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/lm.html'>lm</a></span><span class='op'>(</span><span class='va'>cbb</span><span class='op'>$</span><span class='va'>winpct</span> <span class='op'>~</span> <span class='va'>ADJ_T</span>, data <span class='op'>=</span> <span class='va'>cbb</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='va'>ADJ_win_graph</span> <span class='op'>&lt;-</span> <span class='va'>cbb</span><span class='op'>|&gt;</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>ADJ_T</span>,</span>
+<span>             y <span class='op'>=</span> <span class='va'>winpct</span><span class='op'>)</span><span class='op'>)</span><span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span><span class='op'>(</span>col <span class='op'>=</span> <span class='st'>"skyblue"</span><span class='op'>)</span><span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_smooth.html'>geom_smooth</a></span><span class='op'>(</span>col <span class='op'>=</span> <span class='st'>"indianred1"</span><span class='op'>)</span><span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='st'>"Adjusted Tempo"</span>,</span>
+<span>       y <span class='op'>=</span> <span class='st'>"Win Percentage"</span>,</span>
+<span>       title <span class='op'>=</span> <span class='st'>"Effect of Adjusted Tempo on Win Percentage"</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='va'>ADJ_win_graph</span></span></code></pre>
+</div>
+<img src="index_files/figure-html5/unnamed-chunk-3-1.png" width="624" />
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>hypolm</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/lm.html'>lm</a></span><span class='op'>(</span><span class='va'>winpct</span> <span class='op'>~</span> <span class='va'>ADJ_T</span>, data <span class='op'>=</span> <span class='va'>cbb</span><span class='op'>)</span></span>
 <span><span class='va'>hypolm</span></span></code></pre>
 </div>
 <pre><code>
 Call:
-lm(formula = cbb$winpct ~ ADJ_T, data = cbb)
+lm(formula = winpct ~ ADJ_T, data = cbb)
 
 Coefficients:
 (Intercept)        ADJ_T  
@@ -1563,7 +1599,7 @@ Coefficients:
 </div>
 <pre><code>
 Call:
-lm(formula = cbb$winpct ~ ADJ_T, data = cbb)
+lm(formula = winpct ~ ADJ_T, data = cbb)
 
 Residuals:
      Min       1Q   Median       3Q      Max 
@@ -1580,14 +1616,408 @@ Residual standard error: 0.1798 on 2453 degrees of freedom
 Multiple R-squared:  5.798e-05, Adjusted R-squared:  -0.0003497 
 F-statistic: 0.1422 on 1 and 2453 DF,  p-value: 0.7061</code></pre>
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'><a href='https://rdrr.io/r/graphics/plot.default.html'>plot</a></span><span class='op'>(</span><span class='va'>cbb</span><span class='op'>$</span><span class='va'>ADJ_T</span>, <span class='va'>cbb</span><span class='op'>$</span><span class='va'>winpct</span>, xlab <span class='op'>=</span> <span class='st'>"Pace of Play"</span>, ylab <span class='op'>=</span> <span class='st'>"Win Percentage"</span><span class='op'>)</span></span>
-<span><span class='fu'><a href='https://rdrr.io/r/graphics/abline.html'>abline</a></span><span class='op'>(</span><span class='va'>hypolm</span>, col <span class='op'>=</span> <span class='st'>"red"</span><span class='op'>)</span></span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'>modelsummary</span><span class='fu'>::</span><span class='fu'><a href='https://vincentarelbundock.github.io/modelsummary/reference/modelsummary.html'>modelsummary</a></span><span class='op'>(</span><span class='va'>hypolm</span>,</span>
+<span>                           statistic <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"s.e. = {std.error}"</span>,</span>
+<span>                                         <span class='st'>"p = {p.value}"</span><span class='op'>)</span>,</span>
+<span>                           gof_map <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"nobs"</span>, <span class='st'>"r.squared"</span>, <span class='st'>"adj.r.squared"</span><span class='op'>)</span><span class='op'>)</span></span></code></pre>
 </div>
-<p><img src="index_files/figure-html5/unnamed-chunk-3-1.png" width="624" /></p>
+<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:center;">
+Model 1
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+(Intercept)
+</td>
+<td style="text-align:center;">
+0.480
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+s.e. = 0.075
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+p = &lt;0.001
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ADJ_T
+</td>
+<td style="text-align:center;">
+0.0004
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+s.e. = 0.001
+</td>
+</tr>
+<tr>
+<td style="text-align:left;box-shadow: 0px 1px">
+</td>
+<td style="text-align:center;box-shadow: 0px 1px">
+p = 0.706
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Num.Obs.
+</td>
+<td style="text-align:center;">
+2455
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+R2
+</td>
+<td style="text-align:center;">
+0.00006
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+R2 Adj.
+</td>
+<td style="text-align:center;">
+-0.0003
+</td>
+</tr>
+</tbody>
+</table>
 </div>
-<h2 id="hypothesis-anaylsis">Hypothesis Anaylsis:</h2>
-<p>My hypothesis that a faster pace of play, or larger adjusted tempo, would lead to more wins, or a higher winning percentage was proven true as the correlation between win percentage and adjusted tempo was positive. However, it had very little impact and is not strongly correlated at all, meaning that it is not statistically significant. I will continue to further explore the impact of pace of play in college basketball and see if has any correlation with other variables in the data set.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<h2 id="regression-analysis">Regression Analysis:</h2>
+<p>The coefficient of the regression is 0.0004175 which means that for every 1 unit increase in the explanatory variable, in this case an increase of 1 in adjusted tempo, then the outcome variable, in this case win percentage, increases by 0.0004174 or about 0.04%. This coefficient is not statistically significant as it is very small and suggests that there is little correlation between adjusted tempo and winning percentage.</p>
+<h2 id="hypothesis-analysis">Hypothesis Analysis:</h2>
+<p>My hypothesis that a faster pace of play, or larger adjusted tempo, would lead to more wins, or a higher winning percentage was proven true in the sense that the correlation between win percentage and adjusted tempo was positive. However, it had very little impact and is not strongly correlated at all, meaning that it is not statistically significant, and so in a sense my hypothesis that pace of play was a key indicator of team success was proven false.</p>
+<h2 id="multiple-regression">Multiple Regression:</h2>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>multi_hypolm</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/lm.html'>lm</a></span><span class='op'>(</span><span class='va'>winpct</span> <span class='op'>~</span> <span class='va'>ADJ_T</span> <span class='op'>+</span> <span class='va'>TORD</span> <span class='op'>+</span> <span class='va'>ORB</span>, data <span class='op'>=</span> <span class='va'>cbb</span><span class='op'>)</span></span>
+<span><span class='va'>multi_hypolm</span></span></code></pre>
+</div>
+<pre><code>
+Call:
+lm(formula = winpct ~ ADJ_T + TORD + ORB, data = cbb)
+
+Coefficients:
+(Intercept)        ADJ_T         TORD          ORB  
+  -0.168644     0.002514     0.009558     0.010969  </code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'><a href='https://rdrr.io/r/base/summary.html'>summary</a></span><span class='op'>(</span><span class='va'>multi_hypolm</span><span class='op'>)</span></span></code></pre>
+</div>
+<pre><code>
+Call:
+lm(formula = winpct ~ ADJ_T + TORD + ORB, data = cbb)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-0.5102 -0.1232  0.0064  0.1212  0.4865 
+
+Coefficients:
+             Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept) -0.168644   0.085333  -1.976   0.0482 *  
+ADJ_T        0.002514   0.001069   2.351   0.0188 *  
+TORD         0.009558   0.001595   5.991 2.39e-09 ***
+ORB          0.010969   0.000853  12.860  &lt; 2e-16 ***
+---
+Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+
+Residual standard error: 0.1721 on 2451 degrees of freedom
+Multiple R-squared:  0.08383,   Adjusted R-squared:  0.08271 
+F-statistic: 74.76 on 3 and 2451 DF,  p-value: &lt; 2.2e-16</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'>modelsummary</span><span class='fu'>::</span><span class='fu'><a href='https://vincentarelbundock.github.io/modelsummary/reference/modelsummary.html'>modelsummary</a></span><span class='op'>(</span><span class='va'>multi_hypolm</span>,</span>
+<span>                           statistic <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"s.e. = {std.error}"</span>,</span>
+<span>                                         <span class='st'>"p = {p.value}"</span><span class='op'>)</span>,</span>
+<span>                           gof_map <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"nobs"</span>, <span class='st'>"r.squared"</span>, <span class='st'>"adj.r.squared"</span><span class='op'>)</span><span class='op'>)</span></span></code></pre>
+</div>
+<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:center;">
+Model 1
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+(Intercept)
+</td>
+<td style="text-align:center;">
+-0.169
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+s.e. = 0.085
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+p = 0.048
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ADJ_T
+</td>
+<td style="text-align:center;">
+0.003
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+s.e. = 0.001
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+p = 0.019
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+TORD
+</td>
+<td style="text-align:center;">
+0.010
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+s.e. = 0.002
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+p = &lt;0.001
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ORB
+</td>
+<td style="text-align:center;">
+0.011
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+s.e. = 0.0009
+</td>
+</tr>
+<tr>
+<td style="text-align:left;box-shadow: 0px 1px">
+</td>
+<td style="text-align:center;box-shadow: 0px 1px">
+p = &lt;0.001
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Num.Obs.
+</td>
+<td style="text-align:center;">
+2455
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+R2
+</td>
+<td style="text-align:center;">
+0.084
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+R2 Adj.
+</td>
+<td style="text-align:center;">
+0.083
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="multiple-regression-analysis">Multiple Regression Analysis:</h2>
+<p>In the multiple regression, the adjusted tempo coefficient is 0.0025 which is much greater than it was in the single regression and is somewhat statistically significant. The other two variables in this regression, turnover percentage committed (steal rate) and offensive rebound rate, have coefficients of 0.0096 and 0.011 respectively, both being statistically significant. The reason I chose these two variables is because, as I explained in the introduction, analysts often sight these statistics as the most important for winning college basketball games and, thus, I wanted to test them compared to adjusted tempo.</p>
+<h2 id="other-findings">Other Findings:</h2>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>tempo_by_year</span> <span class='op'>&lt;-</span> <span class='va'>cbb</span><span class='op'>|&gt;</span></span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/group_by.html'>group_by</a></span><span class='op'>(</span><span class='va'>YEAR</span><span class='op'>)</span><span class='op'>|&gt;</span></span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/summarise.html'>summarize</a></span><span class='op'>(</span>mean <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>ADJ_T</span>, na.rm <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='va'>avg_tempo_by_year_graph</span> <span class='op'>&lt;-</span> <span class='va'>tempo_by_year</span><span class='op'>|&gt;</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>YEAR</span>,</span>
+<span>             y <span class='op'>=</span> <span class='va'>mean</span><span class='op'>)</span><span class='op'>)</span><span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_path.html'>geom_line</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='st'>"Year"</span>,</span>
+<span>       y <span class='op'>=</span> <span class='st'>"Average Tempo"</span>,</span>
+<span>       title <span class='op'>=</span> <span class='st'>"Average Pace of Play by Year"</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='va'>avg_tempo_by_year_graph</span></span></code></pre>
+</div>
+<p><img src="index_files/figure-html5/unnamed-chunk-5-1.png" width="624" /></p>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>cbb_2015</span> <span class='op'>&lt;-</span> <span class='va'>cbb</span><span class='op'>|&gt;</span></span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>YEAR</span> <span class='op'>==</span> <span class='fl'>2015</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='va'>cbb_2015</span><span class='op'>$</span><span class='va'>winpct</span> <span class='op'>&lt;-</span> <span class='va'>cbb_2015</span><span class='op'>$</span><span class='va'>W</span> <span class='op'>/</span> <span class='va'>cbb_2015</span><span class='op'>$</span><span class='va'>G</span></span>
+<span></span>
+<span><span class='va'>hypolm_15</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/lm.html'>lm</a></span><span class='op'>(</span><span class='va'>cbb_2015</span><span class='op'>$</span><span class='va'>winpct</span> <span class='op'>~</span> <span class='va'>cbb_2015</span><span class='op'>$</span><span class='va'>ADJ_T</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='fu'><a href='https://rdrr.io/r/base/summary.html'>summary</a></span><span class='op'>(</span><span class='va'>hypolm_15</span><span class='op'>)</span></span></code></pre>
+</div>
+<pre><code>
+Call:
+lm(formula = cbb_2015$winpct ~ cbb_2015$ADJ_T)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-0.4919 -0.1221 -0.0015  0.1312  0.4769 
+
+Coefficients:
+                Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)     0.816577   0.233202   3.502 0.000523 ***
+cbb_2015$ADJ_T -0.005026   0.003588  -1.401 0.162192    
+---
+Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+
+Residual standard error: 0.1803 on 349 degrees of freedom
+Multiple R-squared:  0.00559,   Adjusted R-squared:  0.002741 
+F-statistic: 1.962 on 1 and 349 DF,  p-value: 0.1622</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'>modelsummary</span><span class='fu'>::</span><span class='fu'><a href='https://vincentarelbundock.github.io/modelsummary/reference/modelsummary.html'>modelsummary</a></span><span class='op'>(</span><span class='va'>hypolm_15</span>,</span>
+<span>                           statistic <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"s.e. = {std.error}"</span>,</span>
+<span>                                         <span class='st'>"p = {p.value}"</span><span class='op'>)</span>,</span>
+<span>                           gof_map <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"nobs"</span>, <span class='st'>"r.squared"</span>, <span class='st'>"adj.r.squared"</span><span class='op'>)</span><span class='op'>)</span></span></code></pre>
+</div>
+<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:center;">
+Model 1
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+(Intercept)
+</td>
+<td style="text-align:center;">
+0.817
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+s.e. = 0.233
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+p = &lt;0.001
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+cbb_2015$ADJ_T
+</td>
+<td style="text-align:center;">
+-0.005
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+s.e. = 0.004
+</td>
+</tr>
+<tr>
+<td style="text-align:left;box-shadow: 0px 1px">
+</td>
+<td style="text-align:center;box-shadow: 0px 1px">
+p = 0.162
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Num.Obs.
+</td>
+<td style="text-align:center;">
+351
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+R2
+</td>
+<td style="text-align:center;">
+0.006
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+R2 Adj.
+</td>
+<td style="text-align:center;">
+0.003
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="other-findings-analysis">Other Findings Analysis:</h2>
+<p>I decided to examine the average adjusted tempo by year and found there was a significant increase in average adjusted tempo from the 2015 season to the 2016 season. I wondered if that could possibly be because there was a much stronger correlation between adjusted tempo and win percentage during the 2015 season, and so I ran a regression on those two variables for that season but there was not a strong correlation, in fact, there was a slightly negative correlation instead. I then tried to find an alternative explanation as to why there was such an increase between these seasons by looking at the top finishing teams from the 2015 season, but that did not seem to explain it either because the champion that year was only slightly above the average, the second place finisher was far below the average in adjusted tempo, and the team with the highest winning percentage was about average in that category. My only current reasoning as to why this increase occurred was because the NBA champion Golden State Warriors from 2015 played at a very fast pace and thus college teams attempted to replicate this as well.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>The results of this study have shown my hypothesis that playing at a faster pace increases a team’s chance of winning to be false for the most part, as even though there is a slight positive correlation between the two variables, it is not statistically significant. Instead, a better indicator of team success is the rate at which teams force turnovers and rebound the basketball. One aspect of this study I would like to improve upon in the future is looking at these data points by conference because there is a wide range of talent at the division one level, and so looking at division one basketball in its entirety might not be the most effective way at evaluating the overall trends of the top teams, which I am most interested in. I am also interested in further examining why there was the large increase in adjusted tempo from the 2015 to the 2016 season if there is not a strong correlation between win percentage and pace of play.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
