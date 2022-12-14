@@ -1,7 +1,7 @@
 ---
 title: "Gov 50 Final Project"
 author: "Andrew Rosenblatt"
-description: "My final project"
+description: "Effect of Pace of Play on Winning Percentage for College Basketball"
 output:
   distill::distill_article:
     self_contained: false
